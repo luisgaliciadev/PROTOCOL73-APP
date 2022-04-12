@@ -4,7 +4,7 @@
         <!-- ===================================
           START THE HEADER
         ==================================== -->
-          <app-header></app-header>
+          <app-header (setShowMenu)="getShowMenu($event)"></app-header>
         <!-- ===================================
             END THE HEADER
         ==================================== -->
@@ -12,12 +12,12 @@
         <!-- ===================================
         START THE SIDEBAR MENU - CONNECTED MODAL
         ==================================== -->
-          <app-side-menu></app-side-menu>
+          <app-side-menu [showMenu]="showMenu"></app-side-menu>
         <!-- ===================================
         START THE SIDEBAR MENU - CONNECTED MODAL
         ==================================== -->
         <router-outlet></router-outlet>
-
+        <app-nav-bar></app-nav-bar>
     </div>
 </div>
 

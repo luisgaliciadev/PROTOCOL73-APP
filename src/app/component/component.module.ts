@@ -14,6 +14,7 @@ import { TopSellingComponent } from './top-selling/top-selling.component';
 import { TopInvestorComponent } from './top-investor/top-investor.component';
 import { ArtworksComponent } from './artworks/artworks.component';
 import { BestSellingComponent } from './best-selling/best-selling.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { BestSellingComponent } from './best-selling/best-selling.component';
     TopSellingComponent,
     TopInvestorComponent,
     ArtworksComponent,
-    BestSellingComponent
+    BestSellingComponent,
+    NavBarComponent
   ],
   imports: [
     CommonModule
@@ -50,7 +52,8 @@ import { BestSellingComponent } from './best-selling/best-selling.component';
     TopSellingComponent,
     TopInvestorComponent,
     ArtworksComponent,
-    BestSellingComponent
+    BestSellingComponent,
+    NavBarComponent
   ]
 })
 export class ComponentModule { }

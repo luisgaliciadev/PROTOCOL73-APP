@@ -9,10 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LayoutComponent implements OnInit {
 
+  showMenu = false;
+
   constructor() { }
 
   ngOnInit(): void {
    
+  }
+
+  getShowMenu(res: boolean) {
+    this.showMenu = res;
   }
 
 }

@@ -1,0 +1,42 @@
+@use "../custom" as *;
+
+@use "../components/mixins" as *;
+
+/**
+ * ----------------------------------------
+ *  START THE SEARCH
+ * ----------------------------------------
+ */
+
+ .help-search-support {
+     padding: 10px 20px 12px 20px;
+     border-radius: 15px;
+     .content {
+        background-image: url('../../images/other/bg_card.jpg');
+        background-position: center;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        padding: 30px 35px;
+        border-radius: 15px;
+     }
+     .head {
+         text-align: center;
+        h2 {
+            font-size: 18px;
+            font-weight: 600;
+            color: $white;
+            margin: 0;
+            margin-bottom: 3px;
+        }
+        p {
+            font-size: 12px;
+            color: rgba($white, .8);
+        }
+     }
+     .form-group {
+         .form-control {
+             height: 45px;
+         }
+     }
+ }

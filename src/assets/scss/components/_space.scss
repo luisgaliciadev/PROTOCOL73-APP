@@ -1,0 +1,63 @@
+
+
+@for $i from 0 through 50 {
+    .padding-#{$i} {
+        padding: 0px + $i;
+    }
+
+    .padding-t-#{$i} {
+        padding-top: 0px + $i;
+    }
+
+    .padding-b-#{$i} {
+        padding-bottom: 0px + $i;
+    }
+
+    .padding-r-#{$i} {
+        padding-right: 0px + $i;
+    }
+
+    .padding-l-#{$i} {
+        padding-left: 0px + $i;
+    }
+
+    .padding-y-#{$i} {
+        padding-top: 0px + $i;
+        padding-bottom: 0px + $i;
+    }
+
+    .padding-x-#{$i} {
+        padding-right: 0px + $i;
+        padding-left: 0px + $i;
+    }
+
+    .margin-#{$i} {
+        margin: 0px + $i;
+    }
+
+    .margin-t-#{$i} {
+        margin-top: 0px + $i;
+    }
+
+    .margin-b-#{$i} {
+        margin-bottom: 0px + $i;
+    }
+
+    .margin-r-#{$i} {
+        margin-right: 0px + $i;
+    }
+
+    .margin-l-#{$i} {
+        margin-left: 0px + $i;
+    }
+
+    .margin-y-#{$i} {
+        margin-top: 0px + $i;
+        margin-bottom: 0px + $i;
+    }
+
+    .margin-x-#{$i} {
+        margin-right: 0px + $i;
+        margin-left: 0px + $i;
+    }
+}

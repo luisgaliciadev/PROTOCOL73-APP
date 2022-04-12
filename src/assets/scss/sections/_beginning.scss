@@ -1,0 +1,301 @@
+@use "../custom" as *;
+
+@use "../components/mixins" as *;
+
+/**
+ * ----------------------------------------
+ * BACKGROUND IMAGE
+ * ----------------------------------------
+ */
+
+.bg-gradient-started {
+    position: fixed !important;
+    @include overlay;
+    z-index: -1;
+
+    background-color: #222032;
+
+    &::before {
+        content: "";
+        background-image: url("../../images/other/bg-gradient.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50% 100%;
+        position: fixed;
+        opacity: 0.1;
+        width: 100vw;
+        height: 100%;
+    }
+
+    .bg-noise {
+        position: fixed;
+        background-image: url("../../images/other/bg-noise.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+        opacity: 0.2;
+        mix-blend-mode: darken;
+    }
+}
+
+/**
+ * ----------------------------------------
+ * START INFO ABOUT THE REMPLATE
+ * ----------------------------------------
+ */
+
+.un-info-template {
+    position: relative;
+
+    .main-img-nft {
+        padding: 30px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+
+            @include media-breakpoint-up(sm) {
+                height: 240px;
+            }
+        }
+    }
+
+    .block-numbers {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+
+        .dividar-y {
+            background-color: rgba($white, 0.15);
+            height: 50px;
+            width: 1px;
+            display: inline-block;
+        }
+
+        h2 {
+            font-size: 35px;
+            font-weight: 700;
+            color: $white;
+            margin: 0;
+        }
+
+        p {
+            color: $gray-200;
+            font-size: 16px;
+            font-weight: 400;
+            margin: 0;
+        }
+    }
+
+    &::after {
+        content: "";
+        background-image: url("../../images/icons/shape_orange.png");
+        position: absolute;
+        background-repeat: no-repeat;
+        background-size: 55px;
+        width: 55px;
+        height: 55px;
+        display: block;
+        bottom: 80px;
+        left: 12px;
+
+        @include prefixer(animation, floating-1 2s infinite ease-in-out, webkit moz o ms);
+    }
+}
+
+/**
+ * ----------------------------------------
+ * START PAGES LIST
+ * ----------------------------------------
+ */
+
+.un__listPages_started {
+    position: relative;
+    padding: 15px 20px;
+    .content {
+        border: 1px solid rgba($white, 0.1);
+        border-radius: 15px;
+        padding: 20px;
+        background: rgba($dark, 0.01);
+        -webkit-backdrop-filter: saturate(1) blur(10px);
+        -o-backdrop-filter: saturate(1) blur(10px);
+        -ms-backdrop-filter: saturate(1) blur(10px);
+        backdrop-filter: saturate(1) blur(10px);
+        .title {
+            padding: 10px 20px;
+            text-align: center;
+            h3 {
+                font-size: 16px;
+                font-weight: 700;
+                margin: 0;
+                margin-bottom: 10px;
+                color: $white;
+            }
+            p {
+                font-size: 13px;
+                color: $gray-300;
+                margin: 0;
+                span {
+                    color: $white;
+                }
+            }
+        }
+        .un-navMenu-default {
+            &.style_glass {
+                .nav-item {
+                    width: 100%;
+                    margin-bottom: 0;
+                    .nav-link {
+                        border: 0;
+                        background-color: transparent;
+                        padding: 17px 15px;
+                        border-radius: 15px;
+
+                        &.visited {
+                            background-color: transparent !important;
+                        }
+
+                        .icon {
+                            img {
+                                width: 30px;
+                                height: 30px;
+                            }
+                        }
+
+                        .link-title {
+                            color: $white;
+                        }
+
+                        .other-cc {
+                            .badge-text {
+                                color: $gray-300;
+                            }
+
+                            .xs-badge {
+                                min-width: 20px;
+                                height: 20px;
+                                padding: 0 7px;
+                                border-radius: 6px;
+                                background-color: rgba($white, 0.1);
+                                display: inline-flex;
+                                align-items: center;
+                                justify-content: center;
+                                font-size: 11px;
+                                font-weight: 600;
+                                color: $gray-100;
+                            }
+
+                            .icon-arrow {
+                                color: $white;
+                            }
+                        }
+                        &.background {
+                            background-color: rgba($white, 0.05) !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        background-image: url("../../images/icons/shape_one.png");
+        background-repeat: no-repeat;
+        background-size: 53px;
+        width: 53px;
+        height: 53px;
+        right: 0;
+        top: -2px;
+
+        @include prefixer(animation, floating-2 2.5s infinite ease-in-out, webkit moz o ms);
+    }
+}
+
+/**
+ * ----------------------------------------
+ * START THE SOME FEATURES
+ * ----------------------------------------
+ */
+.un_features_list {
+    padding: 0 20px;
+    position: relative;
+    .content {
+        padding: 30px;
+        border: 1px solid rgba($white, 0.1);
+        border-radius: 15px;
+        background: rgba($dark, 0.01);
+        ul {
+            padding: 0;
+            list-style: none;
+            margin: 0;
+            li {
+                margin-bottom: 20px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+                .icon {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 10px;
+                    display: inline-flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 22px;
+                    margin-bottom: 10px;
+                }
+                h4 {
+                    font-size: 15px;
+                    color: $white;
+                    font-weight: 500;
+                    margin: 0;
+                    margin-bottom: 4px;
+                }
+                p {
+                    font-size: 12px;
+                    font-weight: 500;
+                    color: $gray-300;
+                    margin: 0;
+                }
+            }
+        }
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        background-image: url("../../images/icons/shape_three.png");
+        background-repeat: no-repeat;
+        background-size: 70px;
+        width: 70px;
+        height: 70px;
+        top: 62%;
+        right: 60px;
+
+        @include prefixer(animation, floating-2 2s infinite ease-in-out, webkit moz o ms);
+    }
+}
+/**
+ * ----------------------------------------
+ *START THE FOOTER - BUTTONS
+ * ----------------------------------------
+ */
+.bloack-get-started {
+    padding: 15px 20px;
+    .un-navMenu-default {
+        .nav-item {
+            width: 100%;
+            margin-bottom: 15px;
+            .nav-link {
+                border: 1px solid rgba($white, 0.1);
+                border-radius: 15px;
+                .other-cc {
+                    .badge-text {
+                        color: $gray-300;
+                    }
+                }
+            }
+        }
+    }
+}

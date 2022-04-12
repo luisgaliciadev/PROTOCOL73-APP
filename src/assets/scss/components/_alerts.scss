@@ -1,0 +1,94 @@
+@use "../custom" as *;
+
+@use "../components/mixins" as *;
+
+/*============================
+  START THE ALERTS
+============================*/
+
+.alert {
+    border-radius: 10px;
+    padding: 15px;
+    i {
+        font-size: 18px;
+    }
+    &.alert-primary {
+        background-color: rgba($primary, 0.1);
+        border-color: rgba($primary, 0.15);
+        color: $primary;
+        a {
+            color: $primary;
+        }
+    }
+    &.alert-secondary {
+        background-color: rgba($secondary, 0.1);
+        border-color: rgba($secondary, 0.15);
+        color: $secondary;
+        a {
+            color: $secondary;
+        }
+    }
+    &.alert-success {
+        background-color: rgba($green, 0.1);
+        border-color: rgba($green, 0.15);
+        color: $green-600;
+        a {
+            color: $green-600;
+        }
+    }
+    &.alert-danger {
+        background-color: rgba($red, 0.1);
+        border-color: rgba($red, 0.15);
+        color: $red;
+        a {
+            color: $red;
+        }
+    }
+    &.alert-warning {
+        background-color: rgba($orange, 0.1);
+        border-color: rgba($orange, 0.15);
+        color: $orange;
+        a {
+            color: $orange;
+        }
+    }
+    &.alert-info {
+        background-color: rgba($cyan, 0.1);
+        border-color: rgba($cyan, 0.15);
+        color: $cyan;
+        a {
+            color: $cyan;
+        }
+    }
+    &.icon {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+    &.alert-dismissible {
+        padding-right: 65px;
+        display: flex;
+        align-items: center;
+        .btn-close {
+            background: none;
+            width: 30px;
+            height: 30px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: rgba($dark, 0.06);
+            padding: 0;
+            opacity: 1;
+            right: 15px;
+            top: inherit;
+            &::before {
+                content: "\EB99";
+                font-family: remixicon !important;
+                font-size: 18px;
+                font-weight: 600;
+                color: var(--dark);
+            }
+        }
+    }
+}

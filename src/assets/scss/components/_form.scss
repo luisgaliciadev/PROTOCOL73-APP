@@ -1,0 +1,588 @@
+@use "../custom" as *;
+
+@use "../components/mixins" as *;
+
+/*============================
+  SWITCH TOGGLE
+============================*/
+.switch_toggle {
+    position: relative;
+    width: 43px;
+    height: 25px;
+    border-radius: 50px;
+    border: 0;
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 0;
+
+    input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+
+        &:checked {
+            ~ {
+                .handle {
+                    background-color: $primary;
+
+                    &::before {
+                        @include prefixer(transform, translateX(14px), webkit moz o ms);
+                    }
+                }
+            }
+        }
+    }
+
+    .handle {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #d0d3dc;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+        border-radius: 50px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            height: 14px;
+            width: 14px;
+            left: 7px;
+            top: 5px;
+            background-color: $white;
+
+            @include prefixer(transition, 0.26s, webkit moz o ms);
+
+            border-radius: 50%;
+
+            @include prefixer(box-shadow, 0px 1px 1px 0px rgba(62, 67, 119, 0.25), webkit moz o ms);
+        }
+    }
+
+    &.toggle_lg {
+        width: 48px;
+        height: 30px;
+
+        .handle {
+            &::before {
+                width: 22px;
+                height: 22px;
+                left: 6px;
+                top: 4px;
+            }
+        }
+    }
+}
+
+/*============================
+  TOGGLE
+============================*/
+.em_toggle {
+    .btn-toggle {
+        position: relative;
+        width: 34px;
+        height: 23px;
+        border-radius: 50px;
+        border: 0;
+        background-color: #e9eaec;
+
+        @include prefixer(transition, 0.25s, webkit moz o ms);
+
+        .handle {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: var(--white);
+            top: 4px;
+            left: 5px;
+
+            @include prefixer(box-shadow, 0px 1px 1px 0px rgba(62, 67, 119, 0.25), webkit moz o ms);
+
+            @include prefixer(transition, left 0.25s, webkit moz o ms);
+        }
+
+        &.active {
+            background-color: $green;
+
+            > .handle {
+                left: 15px;
+                background-color: var(--white);
+            }
+        }
+
+        &.toggle_md {
+            width: 39px;
+            height: 26px;
+
+            .handle {
+                top: 5px;
+                height: 16px;
+                width: 16px;
+            }
+
+            &.active {
+                > .handle {
+                    left: 18px;
+                }
+            }
+        }
+
+        &.toggle_lg {
+            width: 48px;
+            height: 30px;
+
+            .handle {
+                top: 4px;
+                width: 22px;
+                height: 22px;
+            }
+
+            &.active {
+                > .handle {
+                    left: 21px;
+                }
+            }
+        }
+    }
+}
+
+/*============================
+  FORM GROUP - INPUTS
+============================*/
+.form-group {
+    margin-bottom: 15px;
+
+    label {
+        font-size: 14px;
+        margin-bottom: 8px;
+        font-weight: 500;
+        color: var(--secondary);
+    }
+
+    .form-control {
+        height: 50px;
+        border-radius: 10px;
+        width: 100%;
+        background-color: var(--white);
+        border: 1px solid var(--gray-200);
+        padding-left: 20px;
+        font-weight: 500;
+        font-size: 16px;
+        color: var(--dark);
+        box-shadow: none;
+        -webkit-box-shadow: none !important;
+        -moz-box-shadow: none !important;
+        -ms-box-shadow: none !important;
+        -o-box-shadow: none !important;
+
+        @include prefixer(transition, 0.35s, webkit moz o ms);
+
+        &::placeholder {
+            font-size: 13px;
+            color: var(--gray-300);
+            font-weight: 400;
+        }
+
+        &:-moz-placeholder {
+            font-size: 13px;
+            color: var(--gray-300);
+            font-weight: 400;
+        }
+
+        &:-ms-input-placeholder {
+            font-size: 13px;
+            color: var(--gray-300);
+            font-weight: 400;
+        }
+
+        &::-webkit-input-placeholder {
+            font-size: 13px;
+            color: var(--gray-300);
+            font-weight: 400;
+        }
+
+        &:focus {
+            border-color: $gray-500 !important;
+        }
+
+        &:hover,
+        &:focus,
+        &:valid {
+            background-color: var(--white);
+            border-color: var(--gray-200);
+        }
+
+        &.is-invalid {
+            border-color: $red;
+            background-color: var(--white);
+            background-image: none;
+
+            & ~ {
+                .icon_password {
+                    opacity: 0;
+                    pointer-events: none;
+                }
+            }
+        }
+
+        &.is-valid {
+            border-color: $green;
+            background-color: var(--white);
+            background-image: none;
+
+            & ~ {
+                .icon_password {
+                    opacity: 0;
+                    pointer-events: none;
+                }
+            }
+        }
+    }
+
+    .custom-select {
+        background-image: url("data:image/svg+xml,%3Csvg id='Group_8600' data-name='Group 8600' xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath id='Path_1959' data-name='Path 1959' d='M0,0H24V24H0Z' fill='none'/%3E%3Cpath id='Path_1960' data-name='Path 1960' d='M12,15,7.757,10.757,9.172,9.343,12,12.172l2.828-2.829,1.415,1.414Z' fill='%237d7996'/%3E%3C/svg%3E%0A") !important;
+        -moz-appearance: none; /* Firefox */
+        -webkit-appearance: none; /* Safari and Chrome */
+        appearance: none;
+        background-position-x: calc(100% - 12px);
+        background-repeat: no-repeat;
+        background-size: 25px;
+        display: flex;
+        align-items: center;
+        width: 100%;
+
+        &.is-invalid {
+            border-color: $red;
+            background-color: var(--white);
+        }
+    }
+
+    textarea {
+        height: auto !important;
+        padding-top: 15px;
+
+        &::-webkit-resizer {
+            display: none;
+        }
+    }
+
+    &.icon-left {
+        .input_group {
+            position: relative;
+            display: flex;
+            align-items: center;
+
+            .icon {
+                position: absolute;
+                left: 18px;
+
+                svg {
+                    width: 22px;
+                    height: 22px;
+
+                    path,
+                    circle {
+                        stroke: var(--secondary);
+                    }
+                }
+
+                i {
+                    font-size: 20px;
+                    color: var(--gray-300);
+                }
+            }
+
+            .form-control {
+                padding-left: 50px;
+            }
+        }
+    }
+
+    &.icon-right {
+        .input_group {
+            position: relative;
+            display: flex;
+            align-items: center;
+
+            .icon {
+                position: absolute;
+                right: 18px;
+
+                svg {
+                    width: 22px;
+                    height: 22px;
+
+                    path,
+                    circle {
+                        stroke: var(--secondary);
+                    }
+                }
+
+                i {
+                    font-size: 20px;
+                    color: var(--gray-300);
+                }
+            }
+
+            .form-control {
+                padding-right: 50px;
+            }
+        }
+    }
+
+    &.with_icon {
+        .input_group {
+            position: relative;
+            display: flex;
+            align-items: center;
+
+            .icon {
+                position: absolute;
+                left: 18px;
+
+                svg {
+                    width: 22px;
+                    height: 22px;
+
+                    path,
+                    circle {
+                        stroke: var(--secondary);
+                    }
+                }
+
+                i {
+                    font-size: 20px;
+                    color: var(--gray-300);
+                }
+            }
+
+            .form-control {
+                padding-left: 50px;
+            }
+        }
+    }
+
+    .input_group {
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        .icon_password {
+            position: absolute;
+            right: 18px;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 0;
+
+            i {
+                font-size: 20px;
+                color: var(--secondary);
+            }
+        }
+    }
+
+    .invalid-feedback {
+        font-size: 12px;
+        color: $red;
+        display: block;
+        margin-top: 5px;
+    }
+
+    &.input-lined {
+        display: flex;
+        flex-direction: column-reverse;
+        margin-bottom: 20px;
+
+        label {
+            font-size: 12px;
+            margin-bottom: 0;
+            line-height: 5px;
+
+            @include prefixer(transition, 0.35s, webkit moz o ms);
+        }
+
+        .form-control {
+            padding-left: 0;
+            border-radius: 0;
+            border: 0;
+            border-bottom: 1px solid var(--gray-200);
+            background-color: transparent;
+            height: 45px;
+
+            @include prefixer(transition, 0.35s, webkit moz o ms);
+
+            &:focus {
+                border-bottom-color: var(--border-blue);
+
+                + label {
+                    color: $blue !important;
+                }
+            }
+
+            &::placeholder {
+                font-size: 16px;
+            }
+
+            &:-moz-placeholder {
+                font-size: 16px;
+            }
+
+            &:-ms-input-placeholder {
+                font-size: 16px;
+            }
+
+            &::-webkit-input-placeholder {
+                font-size: 16px;
+            }
+
+            &.is-valid {
+                border-bottom-color: $green;
+                background-color: transparent;
+            }
+
+            &.is-invalid {
+                border-bottom-color: $red;
+                background-color: transparent;
+            }
+        }
+
+        .additional_txt {
+            font-size: 12px;
+            color: var(--secondary);
+            margin-top: 5px;
+        }
+
+        .group_additional {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
+        .custom-select {
+            background-position-x: calc(100% - 3px);
+        }
+
+        &:focus-within {
+            label {
+                color: $primary;
+            }
+        }
+    }
+
+    &.inputDefault-animated {
+        .group_anime {
+            position: relative;
+            display: flex;
+            align-items: center;
+            width: 100%;
+
+            label {
+                position: absolute;
+                z-index: 1;
+                left: 20px;
+                margin: 0;
+                background-color: transparent;
+                color: var(--secondary);
+                padding: 0;
+
+                @include prefixer(transition, 0.35s, webkit moz o ms);
+            }
+
+            .form-control {
+                &:focus,
+                &:valid {
+                    ~ label {
+                        @include prefixer(transform, scale(0.85) translateY(-30px), webkit moz o ms);
+
+                        background-color: var(--white);
+                        padding: 2px 6px;
+                        left: 10px;
+                    }
+
+                    &.is-valid {
+                        ~ label {
+                            color: $green;
+                        }
+                    }
+
+                    &.is-invalid {
+                        ~ label {
+                            color: $red;
+                        }
+                    }
+                }
+
+                &::placeholder {
+                    opacity: 0;
+                }
+
+                &:-moz-placeholder {
+                    opacity: 0;
+                }
+
+                &:-ms-input-placeholder {
+                    opacity: 0;
+                }
+
+                &::-webkit-input-placeholder {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+
+    &.lined__iconed {
+        .input_group {
+            position: relative;
+            display: flex;
+            align-items: center;
+
+            .icon {
+                position: absolute;
+                left: 0;
+
+                svg {
+                    width: 22px;
+                    height: 22px;
+
+                    path,
+                    circle {
+                        stroke: var(--secondary);
+                    }
+                }
+
+                i {
+                    font-size: 20px;
+                    color: var(--secondary);
+                }
+            }
+
+            .form-control {
+                padding-left: 30px;
+            }
+        }
+    }
+    .feedback-text {
+        font-size: 12px;
+        margin-top: 8px;
+        color: var(--secondary);
+    }
+}
+
+.form-report {
+    .btn-report {
+        width: 100%;
+        min-height: 52px;
+        border-radius: 10px;
+        color: $white;
+        background-color: $primary;
+        font-size: 15px;
+        font-weight: 500;
+    }
+}

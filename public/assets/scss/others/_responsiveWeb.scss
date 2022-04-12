@@ -1,0 +1,353 @@
+@use "../custom" as *;
+
+@use "../components/mixins" as *;
+
+/**
+ * ----------------------------------------
+ * START RESPONSIVE --> WEB, TABLET
+ * ----------------------------------------
+ */
+
+section {
+    &:not(.loader-page, .bg-gradient-started) {
+        @include media-breakpoint-up(lg) {
+            width: calc(100% - 320px) !important;
+            max-width: 100%;
+            margin-left: auto;
+            padding-right: 3.125rem !important; // 50PX
+            padding-left: 3.125rem !important; //50PX
+            right: 0;
+
+            &.un-page-components {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+                .un-title-default,
+                .content-comp {
+                    padding-right: 3.125rem !important; // 50PX
+                    padding-left: 3.125rem !important; //50PX
+                    background-color: var(--white);
+                    .un-title-default {
+                        padding-left: 20px !important;
+                        padding-right: 20px !important;
+                    }
+                    .un-connect-wallet,
+                    .un-myItem-list,
+                    .un-activity-toggle,
+                    .un-create-collectibles,
+                    .padding-20,
+                    .un-put-on-marketplace,
+                    .un-title-default,
+                    header {
+                        padding-left: 0 !important;
+                        padding-right: 0 !important;
+                    }
+                    .space-items {
+                        height: 1px;
+                        background-color: var(--gray-200);
+                        &:first-of-type {
+                            height: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//HEADER
+header {
+    &.heade-sticky {
+        @include media-breakpoint-up(lg) {
+            width: calc(100% - 320px) !important;
+            margin-left: auto;
+            right: 0;
+            padding-right: 3.125rem !important; // 50PX
+            padding-left: 3.125rem !important; //50PX
+            .menu-sidebar {
+                display: none;
+            }
+        }
+    }
+}
+
+//MODAL
+.modal {
+    &#mdllSidebar-connected {
+        @include media-breakpoint-up(lg) {
+            display: block;
+            width: 320px;
+            z-index: 10;
+            .modal-dialog {
+                position: fixed;
+                width: 320px;
+                display: block;
+                border-right: 1px solid var(--gray-200);
+                .modal-content {
+                    .modal-header {
+                        padding-top: 20px;
+                    }
+                }
+            }
+
+            .btnClose {
+                display: none;
+            }
+        }
+    }
+    &:not(#mdllSidebar-connected, #mdllSidebar-guest, #mdllSidebar-connectedTest) {
+        .modal-content {
+            @include media-breakpoint-up(lg) {
+                .modal-header,
+                .modal-body,
+                .modal-footer {
+                    width: calc(100% - 40%);
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+        }
+    }
+}
+
+// CUTOME --> MEDIA-BREAKPONT LARGE
+
+@include media-breakpoint-up(lg) {
+    .un-title-default {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .unList-bestSeller {
+        .content-list-sellers {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+    .unSwiper-cards {
+        .content-cards-NFTs {
+            .swiper-slide {
+                .item-card-gradual {
+                    margin-left: 0 !important;
+                }
+                &:last-child {
+                    margin-right: 0 !important;
+                }
+            }
+        }
+    }
+    .main-search-header {
+        .content-search {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+    .categories-tag-search {
+        .content-tags {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        &.solid-bg-white {
+            .content-tags {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+    }
+    .discover-nft-random {
+        .content-NFTs-body {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+    .unList-creatores {
+        .content-list-creatores {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+    .un-section-seller {
+        .un-block-creators {
+            .swiper-slide {
+                &:first-child {
+                    .un-item-seller {
+                        padding-left: 0;
+                    }
+                }
+            }
+        }
+    }
+    .un-details-blog {
+        .head,
+        .body {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        .footer {
+            margin-left: -3.125rem !important; // 50PX
+            margin-right: -3.125rem !important; //50PX
+            padding-right: 3.125rem !important; // 50PX
+            padding-left: 3.125rem !important; //50PX
+        }
+    }
+    .un-creator-ptofile {
+        .head {
+            .cover-image {
+                margin-left: -3.125rem !important; // 50PX
+                margin-right: -3.125rem !important; //50PX
+            }
+            .text-user-creator {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+        .body {
+            .item-followers,
+            .description {
+                padding-left: 0;
+                padding-right: 0;
+            }
+            .statistics {
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+        .tab-creatore-profile {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+    .footer-pages-forms {
+        width: calc(100% - 320px) !important;
+        margin-left: auto;
+        padding-right: 3.125rem !important; // 50PX
+        padding-left: 3.125rem !important; //50PX
+    }
+    .un-details-collectibles {
+        .footer {
+            width: calc(100% - 320px) !important;
+            margin-left: auto;
+            padding-right: 3.125rem !important; // 50PX
+            padding-left: 3.125rem !important; //50PX
+        }
+        .head {
+            .cover-main-img {
+                margin-left: 0;
+                margin-right: 0;
+            }
+            .title-card-text,
+            .txt-price-coundown {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+        .body {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+    .buttonSticky_add {
+        width: calc(100% - 320px) !important;
+        margin-left: auto;
+        padding-right: 3.125rem !important; // 50PX
+        padding-left: 3.125rem !important; //50PX
+    }
+    .un-bottom-navigation {
+        .em_body_navigation {
+            width: calc(100% - 320px);
+            margin-left: auto;
+            padding-right: 3.125rem !important; // 50PX
+            padding-left: 3.125rem !important; //50PX
+        }
+    }
+    .stories {
+        &.list {
+            .story {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+        }
+        &.carousel {
+            .story {
+                &:first-child {
+                    margin-left: 0 !important;
+                }
+            }
+        }
+    }
+    .display-stories {
+        .space {
+            margin-left: 0;
+        }
+    }
+    .collection-creatores {
+        .content-list-creatores {
+            .nav-item {
+                .nav-link {
+                    padding-left: 0 !important;
+                    padding-right: 0 !important;
+                }
+            }
+        }
+    }
+    .un-activity-page {
+        .content-activity {
+            .head {
+                padding-left: 0;
+                padding-right: 0;
+            }
+            .body {
+                .nav-item {
+                    .nav-link {
+                        padding-left: 0;
+                        padding-right: 0;
+                    }
+                }
+            }
+        }
+    }
+    .un-navMenu-default {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .about-section {
+        .descriptio {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+    .padding-x-20 {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .un-my-account {
+        .head {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+    .un-blog-list {
+        .nav {
+            .nav-item {
+                .nav-link {
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+    .modal-collectibles {
+        .modal-header,
+        .modal-footer {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+    .footer-account {
+        width: calc(100% - 320px) !important;
+        max-width: 100%;
+        right: 0;
+        margin-left: auto;
+        padding-right: 3.125rem !important; // 50PX
+        padding-left: 3.125rem !important; //50PX
+    }
+}
+//@END.

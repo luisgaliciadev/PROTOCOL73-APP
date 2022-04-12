@@ -1,0 +1,180 @@
+@use "../custom" as *;
+
+@use "../components/mixins" as *;
+
+/*============================
+  START THE TOASTS
+============================*/
+.place__top {
+    .toast {
+        top: -30px;
+        opacity: 0;
+        pointer-events: none;
+        position: fixed;
+        &.show {
+            opacity: 1;
+            top: 10px;
+            opacity: 1;
+            pointer-events: all;
+        }
+    }
+    &.-full {
+        .toast {
+            &.show {
+                top: 0;
+            }
+        }
+    }
+}
+
+.place__bottom {
+    .toast {
+        bottom: -30px;
+        opacity: 0;
+        pointer-events: none;
+        position: fixed;
+        &.show {
+            opacity: 1;
+            bottom: 30px;
+            opacity: 1;
+            pointer-events: all;
+        }
+    }
+    &.-full {
+        .toast {
+            &.show {
+                bottom: 0;
+            }
+        }
+    }
+}
+
+.place__center {
+    .toast {
+        bottom: 48%;
+        opacity: 0;
+        pointer-events: none;
+        position: fixed;
+        &.show {
+            opacity: 1;
+            bottom: 50%;
+            opacity: 1;
+            pointer-events: all;
+        }
+    }
+}
+
+.toast {
+    z-index: 99;
+    border: 0;
+    border-radius: 10px;
+    background-color: var(--white);
+    position: relative;
+    box-shadow: none;
+
+    @include prefixer(transition, 0.3s cubic-bezier(0.46, 0.03, 0.52, 0.96), webkkit moz o ms);
+
+    .toast-body {
+        display: flex;
+        gap: 10px;
+        border-radius: 10px;
+        padding: 12px 20px;
+        .icon {
+            font-size: 22px;
+        }
+        .content {
+            display: flex;
+            align-items: center;
+            .display-link {
+                font-size: 13px;
+                font-weight: 500;
+                display: block;
+                text-decoration: none;
+            }
+            .display__text {
+                padding-right: 35px;
+                p {
+                    color: var(--dark);
+                    font-size: 14px;
+                    font-weight: 500;
+                    margin-bottom: 1px;
+                }
+            }
+        }
+    }
+    .btn-close {
+        background-image: none !important;
+        font-size: 18px;
+        font-weight: 500;
+        color: var(--secondary);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 1;
+        padding: 0;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        right: 10px;
+    }
+    &.bg-orange,
+    &.bg-red,
+    &.bg-blue,
+    &.bg-dark,
+    &.bg-yellow,
+    &.bg-pink {
+        .toast-body {
+            .icon {
+                color: $white;
+            }
+            .display__text {
+                p {
+                    color: $white;
+                }
+            }
+            .btn-close {
+                color: $white;
+                opacity: 0.8;
+            }
+        }
+    }
+    &.bg-blue {
+        background-color: $blue;
+    }
+    &.bg-orange {
+        background-color: $orange;
+    }
+    &.bg-red {
+        background-color: $red;
+    }
+    &.bg-yellow {
+        background-color: $yellow;
+    }
+    &.bg-pink {
+        background-color: $pink;
+    }
+
+    &.--shadow {
+        @include shadow-small;
+    }
+    &.--shadowfull {
+        @include shadow-full;
+    }
+    &.fullscreen {
+        width: 100%;
+        border-radius: 0;
+        .toast-body {
+            border-radius: 0;
+        }
+    }
+    &:not(.show) {
+        display: block;
+    }
+    &.w-auto {
+        .toast-body {
+            .display__text {
+                padding-right: inherit;
+            }
+        }
+    }
+}

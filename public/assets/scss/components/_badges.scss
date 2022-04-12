@@ -1,0 +1,11 @@
+@use "../custom" as *;
+
+@use "../components/mixins" as *;
+
+/*============================
+  START THE BADGES
+============================*/
+.badge {
+  border-radius: 6px;
+  padding: 6px;
+}

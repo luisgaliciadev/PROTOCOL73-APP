@@ -1,0 +1,20 @@
+@use "../custom" as *;
+
+@use "../components/mixins" as *;
+
+/**
+ * ----------------------------------------
+ * PUT HERE THE HERE THE CODES FOR THE MOZILLA BROWSER
+ * ----------------------------------------
+ */
+
+@-moz-document url-prefix() {
+    // BOTTOM NAVIGATION
+    .un-bottom-navigation {
+        &.filter-blur {
+            .em_body_navigation {
+                background: var(--white);
+            }
+        }
+    }
+}

@@ -1,0 +1,126 @@
+@use "../custom" as *;
+
+@use "../components/mixins" as *;
+
+/*============================
+  START THE DROPDOWN
+============================*/
+.dropdown {
+    .dropdown-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        &::after {
+            content: "\EA50";
+            font-family: remixicon !important;
+            border: 0;
+            font-size: 20px;
+            color: var(--secondary);
+        }
+        &.text-white {
+            &::after {
+                color: $white;
+            }
+        }
+    }
+    &.drop-full {
+        .dropdown-menu {
+            width: 100%;
+        }
+    }
+    &.drop-more {
+        .dropdown-toggle {
+            &::after,
+            &::before {
+                display: none;
+            }
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            padding: 0;
+            color: var(--dark);
+        }
+    }
+    &.dropend {
+        .dropdown-toggle {
+            &::after {
+                content: "\EA54";
+                font-family: remixicon !important;
+                border: 0;
+                font-size: 20px;
+                color: var(--secondary);
+            }
+            &.text-white {
+                &::after {
+                    color: $white;
+                }
+            }
+        }
+    }
+    &.dropstart {
+        .dropdown-toggle {
+            &::before {
+                content: "\EA52";
+                font-family: remixicon !important;
+                border: 0;
+                font-size: 20px;
+                color: var(--secondary);
+            }
+            &.text-white {
+                &::before {
+                    color: $white;
+                }
+            }
+        }
+        .dropdown-menu {
+            right: 0;
+        }
+    }
+}
+
+.dropdown-menu {
+    border: 0;
+    background-color: var(--white);
+    border-radius: 10px;
+    top: 0;
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    margin-top: 0;
+    pointer-events: none;
+    padding: 0;
+    overflow: hidden;
+    @include shadow-full;
+    .dropdown-item {
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--dark);
+        padding: 12px 18px;
+        border-bottom: 1px solid var(--gray-200);
+
+        &:hover {
+            background-color: var(--light);
+        }
+    }
+    li {
+        &:last-child {
+            .dropdown-item {
+                border-bottom: 0;
+            }
+        }
+    }
+    &.shadow-small {
+        @include shadow-small;
+    }
+    &.show {
+        opacity: 1;
+        visibility: visible;
+        top: 0;
+        pointer-events: all;
+    }
+}

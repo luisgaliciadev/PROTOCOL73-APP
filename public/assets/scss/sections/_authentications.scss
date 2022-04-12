@@ -1,0 +1,176 @@
+@use "../custom" as *;
+
+@use "../components/mixins" as *;
+
+/**
+ * ----------------------------------------
+ * START THE FORMS
+ * ----------------------------------------
+ */
+
+.account-section {
+    padding-bottom: 220px;
+    .display-title {
+        .name_step {
+            font-size: 12px;
+            color: var(--secondary);
+            display: block;
+            margin-bottom: 4px;
+        }
+        h1 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--dark);
+            margin: 0;
+        }
+        p {
+            margin-top: 4px;
+            font-size: 14px;
+            color: var(--secondary);
+            margin-bottom: 0;
+        }
+    }
+    .connect-with-apps {
+        display: flex;
+        align-items: center;
+        column-gap: 14px;
+        row-gap: 10px;
+        margin-top: 24px;
+        a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            color: $white;
+            font-size: 22px;
+            text-decoration: none;
+            &.apple {
+                background-color: $dark;
+            }
+            &.google {
+                border: 1px solid var(--gray-200);
+                img {
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+            &.facebook {
+                background-color: $primary;
+            }
+        }
+    }
+    .dividar_or {
+        border-bottom: 1px solid var(--gray-200);
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 24px;
+        span {
+            position: absolute;
+            display: block;
+            font-size: 13px;
+            color: var(--secondary);
+            background-color: var(--white);
+            padding: 0 14px;
+        }
+    }
+    .display_user_account {
+        margin-top: 24px;
+        display: flex;
+        align-items: center;
+        column-gap: 14px;
+        row-gap: 10px;
+        .img_user {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .display-text {
+            h2 {
+                font-size: 12px;
+                color: var(--secondary);
+                font-weight: 500;
+                margin-bottom: 4px;
+            }
+            p {
+                font-size: 14px;
+                color: var(--dark);
+                margin: 0;
+            }
+        }
+    }
+    .form-verification-code {
+        .form-group {
+            .input_group {
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                align-items: center;
+                gap: 12px;
+                input {
+                    width: 52px;
+                    height: 64px;
+                    font-size: 22px;
+                    font-weight: 600;
+                    display: inline-flex;
+                    text-align: center;
+                    justify-content: center;
+                    padding: 0;
+                }
+            }
+        }
+        .countdown_code {
+            margin-top: 30px;
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            text-align: center;
+            .text_count {
+                font-size: 13px;
+                color: var(--secondary);
+                font-weight: 400;
+                margin: 0;
+            }
+            .btn-resend {
+                font-size: 13px;
+                font-weight: 500;
+                color: var(--dark);
+                padding: 8px 20px;
+                background-color: var(--light);
+                border-radius: 50px;
+            }
+        }
+    }
+}
+
+.footer-account {
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--white);
+    padding: 20px 0;
+    .display-actions {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 34px;
+    }
+    .support {
+        margin-top: 28px;
+        p {
+            font-size: 14px;
+            color: var(--secondary);
+            margin-bottom: 0;
+            a {
+                color: $primary;
+                text-decoration: none;
+            }
+        }
+    }
+}

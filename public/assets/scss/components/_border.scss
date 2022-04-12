@@ -1,0 +1,11 @@
+@use '../custom' as *;
+@use '../components/mixins' as *;
+
+/*============================
+ BORDER RADIUS ==> 20
+============================*/
+@for $i from 0 through 20 {
+    .rounded-#{$i} {
+        border-radius: (0px + $i) !important;
+    }
+}

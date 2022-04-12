@@ -1,0 +1,106 @@
+@use "../custom" as *;
+
+@use "../components/mixins" as *;
+
+/**
+ * ----------------------------------------
+ * START THE BRAND
+ * ----------------------------------------
+ */
+.un-brand-about {
+    background-color: var(--light);
+    border-top: 1px solid var(--gray-200);
+    border-bottom: 1px solid var(--gray-200);
+    padding: 25px;
+    text-align: center;
+    .brand_img {
+        width: 80px;
+        height: auto;
+        object-fit: contain;
+        margin-bottom: 10px;
+        &.light-mode {
+            display: inline-block;
+        }
+        &.dark-mode {
+            display: none;
+        }
+    }
+    p {
+        font-size: 12px;
+        margin: 0;
+        color: var(--secondary);
+    }
+}
+
+[data-theme="dark"] {
+    .brand_img {
+        &.light-mode {
+            display: none;
+        }
+        &.dark-mode {
+            display: inline-block;
+        }
+    }
+}
+
+/**
+ * ----------------------------------------
+ * START THE BRAND
+ * ----------------------------------------
+ */
+.about-section {
+    .descriptio {
+        padding: 25px 20px;
+        h2 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--dark);
+            margin: 0;
+            margin-bottom: 8px;
+        }
+        p {
+            font-size: 14px;
+            color: var(--secondary);
+            font-weight: 400;
+            margin: 0;
+        }
+    }
+}
+
+/**
+ * ----------------------------------------
+ * SOCIAL NETWORKS FOTER
+ * ----------------------------------------
+ */
+.social-networks-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    column-gap: 12px;
+    .nav-link {
+        width: 40px;
+        height: 40px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        border-radius: 10px;
+        &.facebook {
+            background-color: rgba(#1877f2, 0.1);
+            color: #1877f2;
+        }
+        &.instagram {
+            background-color: rgba(#fa9905, 0.1);
+            color: #fa9905;
+        }
+        &.youtube {
+            background-color: rgba(#ff4040, 0.1);
+            color: #ff4040;
+        }
+        &.twitter {
+            background-color: rgba(#03a9f4, 0.1);
+            color: #03a9f4;
+        }
+    }
+}

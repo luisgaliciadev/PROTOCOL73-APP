@@ -1,0 +1,349 @@
+@use '../custom' as *;
+
+@use '../components/mixins' as *;
+
+/**
+* ----------------------------------------
+* unList-creatores
+* ----------------------------------------
+*/
+
+.unList-creatores {
+    .un-title-default {
+        margin-bottom: 5px;
+    }
+
+    .content-list-creatores {
+        padding: 0 20px;
+
+        .nav-item {
+            .nav-link {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                border-bottom: 1px solid var(--gray-200);
+                padding: 15px 0;
+
+                .item-user-img {
+                    display: flex;
+                    align-items: center;
+
+                    .avt-img {
+                        width: 45px;
+                        height: 45px;
+                        object-fit: cover;
+                        border-radius: 50%;
+                        margin-right: 15px;
+                    }
+
+                    .txt-user {
+                        h5 {
+                            font-size: 15px;
+                            font-weight: 500;
+                            margin-bottom: 2px;
+                            color: var(--dark);
+                        }
+
+                        p {
+                            font-size: 13px;
+                            color: var(--secondary);
+                            font-weight: 500;
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+
+            &:last-child {
+                .nav-link {
+                    border-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+/**
+* ----------------------------------------
+* unList-bestSeller
+* ----------------------------------------
+*/
+.unList-bestSeller {
+    .content-list-sellers {
+        padding: 20px;
+
+        .item-user-seller {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 15px;
+            border: 1px solid var(--gray-200);
+            padding: 0;
+            margin-bottom: 15px;
+
+            .item-user-img {
+                display: flex;
+                align-items: center;
+                text-decoration: none !important;
+                padding: 15px 20px;
+
+                .avt-img {
+                    width: 50px;
+                    height: 50px;
+                    object-fit: cover;
+                    border-radius: 50%;
+                    margin-right: 15px;
+                }
+
+                .txt-user {
+                    h5 {
+                        font-size: 18px;
+                        font-weight: 500;
+                        color: var(--dark);
+                        margin-bottom: 2px;
+
+                        span {
+                            font-size: 13px;
+                            font-weight: 500;
+                            color: var(--secondary);
+                        }
+                    }
+
+                    p {
+                        font-size: 15px;
+                        font-weight: 500;
+                        margin: 0;
+                        color: var(--dark);
+                        display: flex;
+                        align-items: center;
+
+                        i {
+                            font-size: 15px;
+                            color: $green;
+                            margin-left: 5px;
+                        }
+                    }
+                }
+            }
+
+            .other-option {
+                .btn-box-check {
+                    padding: 15px 20px;
+                }
+            }
+        }
+    }
+}
+
+
+
+/**
+* ----------------------------------------
+* follow-sellers
+* ----------------------------------------
+*/
+
+.follow-sellers {
+    .content-list-creatores {
+        .nav-item {
+            .nav-link {
+                border: 0;
+                padding: 0;
+                margin-bottom: 20px;
+
+                .item-user-img {
+                    text-decoration: none !important;
+
+                    .wrapper-image {
+                        position: relative;
+
+                        .icon {
+                            position: absolute;
+                            bottom: -10px;
+                            right: 9px;
+                            font-size: 17px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/**
+* ----------------------------------------
+* un-activity-page
+* ----------------------------------------
+*/
+.un-activity-page {
+    .content-activity {
+        .head {
+            padding: 15px 20px;
+
+            &:first-of-type {
+                padding-top: 0;
+            }
+
+            .title {
+                font-size: 13px;
+                font-weight: 500;
+                color: var(--secondary);
+                text-transform: uppercase;
+            }
+        }
+
+        .body {
+            border-bottom: 1px solid var(--gray-200);
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+
+            &:last-of-type {
+                border-bottom: 0;
+            }
+
+            .nav-item {
+                .nav-link {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 15px 20px;
+
+                    .item-user-img {
+                        display: flex;
+                        align-items: center;
+
+                        .wrapper-image {
+                            position: relative;
+
+                            .icon-status {
+                                width: 45px;
+                                height: 45px;
+                                display: inline-flex;
+                                align-items: center;
+                                justify-content: center;
+                                margin-right: 15px;
+                                font-size: 20px;
+                                border-radius: 50%;
+                            }
+
+                            .avt-img {
+                                width: 45px;
+                                height: 45px;
+                                object-fit: cover;
+                                border-radius: 50%;
+                                margin-right: 15px;
+                            }
+
+                            .icon {
+                                position: absolute;
+                                bottom: -10px;
+                                right: 9px;
+                                font-size: 17px;
+                            }
+                        }
+
+                        .txt-user {
+                            h5 {
+                                font-size: 15px;
+                                font-weight: 500;
+                                margin-bottom: 3px;
+                                color: var(--dark);
+
+                                &.text-overflow {
+                                    white-space: nowrap;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                    width: calc(100vw - 53vw);
+                                }
+                            }
+
+                            p {
+                                font-size: 13px;
+                                color: var(--secondary);
+                                font-weight: 400;
+                                margin: 0;
+                            }
+                        }
+                    }
+
+                    .other-option {
+                        .img-activiy-sm {
+                            width: 55px;
+                            height: 55px;
+                            object-fit: cover;
+                            border-radius: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/**
+* ----------------------------------------
+* un-activity-page
+* ----------------------------------------
+*/
+.un-connect-wallet {
+    padding: 0 20px;
+
+    .cover-image-wallet {
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+
+            @include media-breakpoint-up(sm) {
+                height: 240px;
+            }
+        }
+    }
+
+    .nav {
+        .nav-item {
+            .nav-link {
+                padding: 20px;
+                border-radius: 15px;
+                border: 1px solid var(--gray-200);
+                position: relative;
+                display: flex;
+                align-items: center;
+                margin-bottom: 15px;
+
+                @include prefixer(transition, 0.25s, webkit moz o ms);
+
+                &::before {
+                    content: "\EA54";
+                    font-family: remixicon !important;
+                    font-size: 24px;
+                    color: var(--secondary);
+                    position: absolute;
+                    right: 20px;
+                }
+
+                .icon-app {
+                    margin-right: 20px;
+
+                    img {
+                        width: 35px;
+                        height: 35px;
+                        object-fit: contain;
+                    }
+                }
+
+                .text-name {
+                    font-size: 16px;
+                    font-weight: 500;
+                    color: var(--dark);
+                    margin: 0;
+                }
+
+                &:active,
+                :hover {
+                    background-color: var(--light);
+                }
+            }
+        }
+    }
+}

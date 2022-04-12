@@ -1,0 +1,60 @@
+@use '../custom' as *;
+@use '../components/mixins' as *;
+
+/*============================
+ PRINT FONT SIZE FROM 0 - 35
+============================*/
+@for $i from 0 through 35 {
+    .size-#{$i} {
+        font-size: (0px + $i) !important;
+    }
+}
+
+/*============================
+ PRINT FONT WEIGHT
+============================*/
+$dimension: 0;
+
+@for $i from 1 to 10 {
+    .weight-#{100 + $dimension} {
+        font-weight: ($dimension + 100) !important;
+    }
+
+    $dimension: $dimension + 100;
+}
+
+/*============================
+ COLORS
+============================*/
+$name_color: ("black": $black, "white": var(--white), "primary": $primary, "secondary": var(--dark), "snow": var(--light), "red": $red, "orange": $orange, "blue": $blue, "yellow": $yellow, "green": $green, "text": var(--secondary), "pink": $pink, "cyan": $cyan, "purple": $purple);
+
+@each $name, $color in $name_color {
+    .color-#{$name} {
+        color: $color;
+    }
+}
+
+/*============================
+ BACGROUND COLORS
+============================*/
+$bg_color: ("black": $black, "white": var(--white), "primary": $primary, "secondary": var(--dark), "snow": var(--light), "red": $red, "orange": $orange, "blue": $blue, "yellow": $yellow, "green": $green, "text": var(--secondary), "pink": $pink, "cyan": $cyan, "purple": $purple);
+
+@each $name, $color in $bg_color {
+    .bg-#{$name} {
+        background-color: $color;
+    }
+}
+
+
+/*============================
+ BACGROUND COLORS - opacity .1
+============================*/
+
+$number: 1;
+$bgcolor_opacity: ("black" $black $number, "white" var(--white) $number, "primary" $primary $number, "secondary" var(--dark) $number, "snow" var(--light) $number, "red" $red $number, "orange" $orange $number, "blue" $blue $number, "yellow" $yellow $number, "green" $green $number, "text" var(--secondary) $number, "pink" $pink $number, "cyan" $cyan $number, "purple" $purple $number);
+
+@each $name, $color, $number in $bgcolor_opacity {
+    .bg-#{$name}-#{$number} {
+        background-color: rgba($color, calc($number / 10));
+    }
+}

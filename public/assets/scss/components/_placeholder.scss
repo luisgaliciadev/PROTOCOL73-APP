@@ -1,0 +1,31 @@
+@use "../custom" as *;
+
+@use "../components/mixins" as *;
+
+/*============================
+  START THE PLACEHOLDERS
+============================*/
+.placeholder {
+    border-radius: 50px;
+    background-color: var(--gray-300);
+    min-height: 12px;
+
+    &.w-15p {
+        width: 15px;
+    }
+    &.w-25p {
+        width: 25px;
+    }
+    &.w-50p {
+        width: 50px;
+    }
+    &.w-70p {
+        width: 70px;
+    }
+    &.w-100p {
+        width: 100px;
+    }
+    &.w-125p {
+        width: 125px;
+    }
+}
